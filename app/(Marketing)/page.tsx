@@ -22,8 +22,7 @@ const textFont = Poppins({
 
 const MarketingPage = () => {
   return (
-    <div className='pt-40 pb-20 flex flex-col gap-3 items-center justify-center'>
-      <Logo/>
+    <div className='flex flex-col gap-3  items-center justify-center'>
       <div className={cn(
         'flex flex-col gap-3 items-center font-semibold justify-center', 
         headingFont.className,
