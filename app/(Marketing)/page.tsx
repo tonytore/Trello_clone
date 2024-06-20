@@ -7,7 +7,7 @@ import { Poppins } from 'next/font/google'
 import Link from 'next/link'
 
 import { cn } from '@/lib/utils'
-import Logo from '@/components/logo'
+
 
 const headingFont = localFont({
     src:'../../public/fonts/ubuntu-light-webfont.woff2'
