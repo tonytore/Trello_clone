@@ -14,8 +14,10 @@ export default clerkMiddleware((auth, req) => {
     return auth().redirectToSignIn();
   }
 
-  if (auth().userId && !auth().orgId && req.nextUrl.password !== '/select-org'){
+  if (auth().userId && !auth().orgId && req.nextUrl.pathname !== '/select-org'){
     const orgSelection = new URL('/select-org',req.url)
+    console.log(orgSelection);
+    
     return NextResponse.redirect(orgSelection)
   }
 },{debug:true});
