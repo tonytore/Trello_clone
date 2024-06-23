@@ -1,9 +1,11 @@
 import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
+import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
 import React from "react";
 
 export default function Navbar() {
+
   return (
     
       <div
@@ -16,12 +18,12 @@ export default function Navbar() {
           <Logo />
           <div className=" flex-1 md:flex-none flex justify-between md:block">
             <Button
-              variant="outline"
-              className=" rounded-xl"
+              variant="ghost"
+              className='rounded-xl'
               size="sm"
               asChild
             >
-              <Link href="/sign-in">Login</Link>
+              <Link href="/sign-in">{auth().userId ? 'you R Succussfully Login' : "Login"}</Link>
             </Button>
             <Button   
               className="hover:text-neutral-400"

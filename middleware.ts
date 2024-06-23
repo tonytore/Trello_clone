@@ -11,13 +11,11 @@ export default clerkMiddleware((auth, req) => {
 
     // Add custom logic to run before redirecting
 
-    return auth().redirectToSignIn();
+    return auth().redirectToSignIn({returnBackUrl:req.url});
   }
 
   if (auth().userId && !auth().orgId && req.nextUrl.pathname !== '/select-org'){
     const orgSelection = new URL('/select-org',req.url)
-    console.log(orgSelection);
-    
     return NextResponse.redirect(orgSelection)
   }
 },{debug:true});

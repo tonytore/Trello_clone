@@ -1,9 +1,15 @@
+
 import React from 'react'
 
+
+
 const OrgPage = () => {
+  
+
   return (
     <div className=''>
       organization page
+     
     </div>
   )
 }
