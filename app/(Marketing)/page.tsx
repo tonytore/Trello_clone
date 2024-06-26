@@ -7,6 +7,7 @@ import { Poppins } from 'next/font/google'
 import Link from 'next/link'
 
 import { cn } from '@/lib/utils'
+import { auth } from '@clerk/nextjs/server'
 
 
 const headingFont = localFont({
@@ -45,7 +46,7 @@ const MarketingPage = () => {
         unique - accomplish it all with Taskify.
       </div>
       <Button variant="destructive" className='bg-black text-white hover:text-black rounded-xl' size='lg' asChild>
-        <Link href='/sign-up'>Get Testify for free</Link>
+        <Link href={auth().userId?'/select-org':'/sign-up'}>Get Testify for free</Link>
       </Button>
     </div>
   )

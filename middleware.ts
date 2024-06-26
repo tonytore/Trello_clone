@@ -11,7 +11,7 @@ export default clerkMiddleware((auth, req) => {
 
     // Add custom logic to run before redirecting
 
-    return auth().redirectToSignIn({returnBackUrl:req.url});
+    return auth().redirectToSignIn();
   }
 
   if (auth().userId && !auth().orgId && req.nextUrl.pathname !== '/select-org'){

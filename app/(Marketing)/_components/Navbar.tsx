@@ -23,14 +23,14 @@ export default function Navbar() {
               size="sm"
               asChild
             >
-              <Link href="/sign-in">{auth().userId ? 'you R Succussfully Login' : "Login"}</Link>
+              <Link href={auth().userId?'/select-org':'/sign-in'}>{auth().userId ? 'Organization' : "Login"}</Link>
             </Button>
             <Button   
               className="hover:text-neutral-400"
               size="sm"
               asChild
             >
-              <Link href="/sign-up">Get Testify for free</Link>
+              <Link href={auth().userId?'/select-org':'/sign-up'}>Get Testify for free</Link>
             </Button>
           </div>
         </div>
